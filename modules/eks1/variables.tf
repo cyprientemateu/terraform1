@@ -47,17 +47,17 @@ variable "tags" {
   }
 }
 
-variable "public_subnet_ids" {
-  type    = list(string)
-  default = [""]
+# variable "public_subnet_ids" {
+#   type    = list(string)
+#   default = [""]
 
-}
+# }
 
-variable "private_subnet_ids" {
-  type    = list(string)
-  default = [""]
-  # default = ["aws_subnet.private_1", "aws_subnet.private_2"]
-}
+# variable "private_subnet_ids" {
+#   type    = list(string)
+#   default = [""]
+#   # default = ["aws_subnet.private_1", "aws_subnet.private_2"]
+# }
 
 # variable "config" {
 #   type = map(any)
@@ -69,23 +69,23 @@ variable "private_subnet_ids" {
 #   }
 # }
 
-#Assuming you already have subnet IDs, you can define them as variables
-# variable "public_subnet_ids" {
-#   type = list(string)
-#   default = [
-#     "subnet-02e286c9bdfb33f0b",
-#     "subnet-011cf4a50c2518de6",
-#     "subnet-06024f887faf3709b"
-#   ]
-#   description = "list of public subnet IDs"
-# }
+# Assuming you already have subnet IDs, you can define them as variables
+variable "public_subnet_ids" {
+  type = list(string)
+  default = [
+    "subnet-0336619fb06b40827",
+    "subnet-0039740e0a4e22a57",
+    "subnet-066aa8043b132d86f"
+  ]
+  description = "list of public subnet IDs"
+}
 
-# variable "private_subnet_ids" {
-#   type = list(string)
-#   default = [
-#     "subnet-0550f861abd03bbad",
-#     "subnet-0c20415faf10875b7",
-#     "subnet-0812b9c88508c415f"
-#   ]
-#   description = "list of private subnet IDs"
-# }
+variable "private_subnet_ids" {
+  type = list(string)
+  default = [
+    "subnet-0f28d5a6dab7d371b",
+    "subnet-03b46041fa4ece393",
+    "subnet-07f419bc264b892c1"
+  ]
+  description = "list of private subnet IDs"
+}
