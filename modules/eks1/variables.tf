@@ -73,9 +73,8 @@ variable "tags" {
 variable "public_subnet_ids" {
   type = list(string)
   default = [
-    "subnet-0336619fb06b40827",
-    "subnet-0039740e0a4e22a57",
-    "subnet-066aa8043b132d86f"
+    "subnet-02e286c9bdfb33f0b",
+    "subnet-011cf4a50c2518de6"
   ]
   description = "list of public subnet IDs"
 }
@@ -83,9 +82,8 @@ variable "public_subnet_ids" {
 variable "private_subnet_ids" {
   type = list(string)
   default = [
-    "subnet-0f28d5a6dab7d371b",
-    "subnet-03b46041fa4ece393",
-    "subnet-07f419bc264b892c1"
+    "subnet-0ea4e8e55f5a0e015",
+    "subnet-001b7fd7aab3aec52"
   ]
   description = "list of private subnet IDs"
 }
