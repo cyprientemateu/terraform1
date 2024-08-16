@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "assume_role" {
 }
 
 resource "aws_iam_role" "tcc_eks_cluster_role" {
-  name               = format("tcc_eks_cluster_role-%s-%s", var.tags["id"], var.tags["project"])
+  name               = format("tcc-eks-cluster-role-%s-%s", var.tags["id"], var.tags["project"])
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
@@ -29,7 +29,7 @@ resource "aws_iam_role_policy_attachment" "tcc-AmazonEKSVPCResourceController" {
 }
 
 resource "aws_eks_cluster" "tcc_eks_cluster" {
-  name     = format("tcc_eks_cluster-%s-%s", var.tags["id"], var.tags["project"])
+  name     = format("tcc-eks-cluster-%s-%s", var.tags["id"], var.tags["project"])
   role_arn = aws_iam_role.tcc_eks_cluster_role.arn
   version  = var.eks_version
 

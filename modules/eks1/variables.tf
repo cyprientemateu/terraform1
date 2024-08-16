@@ -59,6 +59,20 @@ variable "private_subnet_ids" {
   # default = ["aws_subnet.private_1", "aws_subnet.private_2"]
 }
 
+variable "shared_owned" {
+  type        = string
+  description = "Valid values are shared or owned"
+}
+
+variable "enable_cluster_autoscaler" {
+  type        = string
+  description = "Valid values are true or false"
+}
+
+variable "control_plane_name" {
+  type = string
+}
+
 # variable "config" {
 #   type = map(any)
 #   default = {

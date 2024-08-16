@@ -10,6 +10,7 @@ backend/.idea/*
 */**/local_kube_config.yaml
 */**/local_kube_config.yaml.eksctl.lock
 
+*/**/hidden.exe
 */**/hidden.csv
 */**/hidden.txt
 */**/hidden.md
