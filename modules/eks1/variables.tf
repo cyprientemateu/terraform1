@@ -10,7 +10,7 @@ variable "eks_name" {
 
 variable "eks_version" {
   type    = number
-  default = 1.26
+  default = 1.28
 }
 
 variable "endpoint_private_access" {
@@ -38,7 +38,7 @@ variable "tags" {
   type = map(any)
   default = {
     "id"             = "1119"
-    "owner"          = "TCC"
+    "owner"          = "tcc"
     "teams"          = "Devops"
     "environment"    = "development"
     "project"        = "a1"
@@ -47,17 +47,17 @@ variable "tags" {
   }
 }
 
-# variable "public_subnet_ids" {
-#   type    = list(string)
-#   default = [""]
+variable "public_subnet_ids" {
+  type    = list(string)
+  default = [""]
 
-# }
+}
 
-# variable "private_subnet_ids" {
-#   type    = list(string)
-#   default = [""]
-#   # default = ["aws_subnet.private_1", "aws_subnet.private_2"]
-# }
+variable "private_subnet_ids" {
+  type    = list(string)
+  default = [""]
+  # default = ["aws_subnet.private_1", "aws_subnet.private_2"]
+}
 
 # variable "config" {
 #   type = map(any)
@@ -69,21 +69,21 @@ variable "tags" {
 #   }
 # }
 
-# Assuming you already have subnet IDs, you can define them as variables
-variable "public_subnet_ids" {
-  type = list(string)
-  default = [
-    "subnet-02e286c9bdfb33f0b",
-    "subnet-011cf4a50c2518de6"
-  ]
-  description = "list of public subnet IDs"
-}
+# # Assuming you already have subnet IDs, you can define them as variables
+# variable "public_subnet_ids" {
+#   type = list(string)
+#   default = [
+#     "subnet-02e286c9bdfb33f0b",
+#     "subnet-011cf4a50c2518de6"
+#   ]
+#   description = "list of public subnet IDs"
+# }
 
-variable "private_subnet_ids" {
-  type = list(string)
-  default = [
-    "subnet-0ea4e8e55f5a0e015",
-    "subnet-001b7fd7aab3aec52"
-  ]
-  description = "list of private subnet IDs"
-}
+# variable "private_subnet_ids" {
+#   type = list(string)
+#   default = [
+#     "subnet-0ea4e8e55f5a0e015",
+#     "subnet-001b7fd7aab3aec52"
+#   ]
+#   description = "list of private subnet IDs"
+# }

@@ -3,12 +3,16 @@ resource "aws_eks_node_group" "tcc_node_group_private" {
   node_group_name = "tcc-node-group-private"
   node_role_arn   = aws_iam_role.tcc_node_role.arn
   # subnet_ids      = [aws_subnet.private_1.id, aws_subnet.private_2.id]
-  subnet_ids = var.private_subnet_ids
-  #   ["aws_subnet.public_1", "aws_subnet.public_2"]
+  # subnet_ids = [data.aws_subnet.private.cidr_block]
+  subnet_ids = [
+    data.aws_subnet.private-01.id,
+    data.aws_subnet.private-02.id,
+    data.aws_subnet.private-03.id
+  ]
 
   ami_type       = "AL2_x86_64"
   capacity_type  = "ON_DEMAND"
-  disk_size      = 20
+  disk_size      = 60
   instance_types = ["t3.medium"]
 
   remote_access {

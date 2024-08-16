@@ -38,13 +38,15 @@ resource "aws_eks_cluster" "tcc_eks_cluster" {
     endpoint_public_access  = var.endpoint_public_access
     public_access_cidrs     = var.endpoint_public_access_cidrs
 
-    subnet_ids = concat(var.public_subnet_ids, var.private_subnet_ids)
-    # subnet_ids = [
-    #   aws_subnet.public_1.id,
-    #   aws_subnet.public_2.id
-    #   aws_subnet.private_1.id,
-    #   aws_subnet.private_2.id
-    # ]
+    # subnet_ids = [data.aws_subnet.public.cidr_block]
+
+    # subnet_ids = concat(var.public_subnet_ids, var.private_subnet_ids)
+
+    subnet_ids = [
+      data.aws_subnet.public-01.id,
+      data.aws_subnet.public-02.id,
+      data.aws_subnet.public-03.id
+    ]
   }
 
 

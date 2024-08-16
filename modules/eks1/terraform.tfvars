@@ -12,7 +12,7 @@ endpoint_public_access_cidrs = ["0.0.0.0/0"]
 
 tags = {
   "id"             = "1119"
-  "owner"          = "TCC"
+  "owner"          = "tcc"
   "teams"          = "Devops"
   "environment"    = "development"
   "project"        = "a1"
@@ -21,11 +21,13 @@ tags = {
 }
 
 # public_subnet_ids = [
-#   "aws_subnet.public_1.id",
-#   "aws_subnet.public_2.id"
+#   "data.aws_subnet.public-01.id",
+#   "data.aws_subnet.public-02.id",
+#   data.aws_subnet.public-03.id
 # ]
 
 # private_subnet_ids = [
 #   "aws_subnet.private_1.id",
-#   "aws_subnet.private_2.id"
+#   "aws_subnet.private_2.id",
+#   data.aws_subnet.private-03.id
 # ]
