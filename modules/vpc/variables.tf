@@ -31,7 +31,7 @@ variable "tags" {
     "id"             = "1119"
     "owner"          = "tcc"
     "teams"          = "Devops"
-    "environment"    = "production"
+    "environment"    = "dev"
     "project"        = "a1"
     "create_by"      = "Terraform"
     "cloud_provider" = "aws"
