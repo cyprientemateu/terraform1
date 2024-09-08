@@ -6,10 +6,10 @@ resource "aws_route_table" "public" {
     gateway_id = aws_internet_gateway.tcc_igw.id
   }
 
-  tags = {
-    # Name = "${var.vpc_name}-public-route-table"
+  tags = merge(var.tags, {
     Name = format("%s-%s-%s-public-route-table", var.tags["id"], var.tags["environment"], var.tags["project"])
-  }
+    },
+  )
 }
 
 resource "aws_route_table" "private" {
@@ -20,9 +20,9 @@ resource "aws_route_table" "private" {
     nat_gateway_id = element(aws_nat_gateway.tcc_nat[*].id, count.index)
   }
 
-  tags = {
-    # Name = "${var.vpc_name}-private-route-table-${count.index}"
+  tags = merge(var.tags, {
     Name = format("%s-%s-%s-private-route-table-${count.index + 1}-${element(var.availability_zones, count.index)}", var.tags["id"], var.tags["environment"], var.tags["project"])
-  }
+    },
+  )
 }
 

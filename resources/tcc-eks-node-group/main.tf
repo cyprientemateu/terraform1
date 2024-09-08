@@ -28,7 +28,7 @@ locals {
   eks_version  = "1.28"
   node_min     = "1"
   desired_node = "1"
-  node_max     = "5"
+  node_max     = "3"
 
   blue_node_color  = "blue"
   green_node_color = "green"
@@ -49,7 +49,7 @@ locals {
     "id"             = "1119"
     "owner"          = "tcc"
     "teams"          = "Devops"
-    "environment"    = "development"
+    "environment"    = "dev"
     "project"        = "a1"
     "create_by"      = "Terraform"
     "cloud_provider" = "aws"

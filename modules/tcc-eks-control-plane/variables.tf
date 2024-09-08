@@ -1,15 +1,6 @@
 variable "tags" {
   type        = map(any)
   description = "Common tags to be applied to resources"
-  default = {
-    "id"             = "1119"
-    "owner"          = "tcc"
-    "teams"          = "Devops"
-    "environment"    = "development"
-    "project"        = "a1"
-    "create_by"      = "Terraform"
-    "cloud_provider" = "aws"
-  }
 }
 
 variable "aws_region" {

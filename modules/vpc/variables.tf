@@ -1,18 +1,13 @@
 variable "aws_region" {
-  type    = string
-  default = "us-east-1"
+  type = string
 }
 variable "vpc_cidr" {
-  type    = string
-  default = "10.0.0.0/16"
+  type        = string
+  description = "VPC cidr block. Example: 10.0.0.0/16"
 }
-# variable "vpc_name" {
-#   type    = string
-#   default = "tcc-vpc"
-# }
 variable "cluster_name" {
   type    = string
-  default = "tcc-eks-cluster-1119-a1"
+  default = "1119-dev-a1"
 }
 variable "nat_number" {
   type    = number
@@ -27,8 +22,7 @@ variable "private_subnet_cidrs" {
   default = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
 }
 variable "availability_zones" {
-  type    = list(string)
-  default = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  type = list(string)
 }
 
 variable "tags" {
@@ -37,7 +31,7 @@ variable "tags" {
     "id"             = "1119"
     "owner"          = "tcc"
     "teams"          = "Devops"
-    "environment"    = "dev"
+    "environment"    = "production"
     "project"        = "a1"
     "create_by"      = "Terraform"
     "cloud_provider" = "aws"
