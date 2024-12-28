@@ -12,18 +12,18 @@ provider "aws" {
   region = local.aws_region
 }
 
-terraform {
-  backend "s3" {
-    bucket         = "main-backend-tcc-1119"
-    dynamodb_table = "dynamodb-tcc-1119"
-    key            = "terraform1/vpc/terraform.tfstate"
-    region         = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket         = "main-backend-tcc-1119"
+#     dynamodb_table = "dynamodb-tcc-1119"
+#     key            = "terraform1/vpc/terraform.tfstate"
+#     region         = "us-east-1"
+#   }
+# }
 
 locals {
   aws_region           = "us-east-1"
-  cluster_name         = "1119-dev-a1"
+  cluster_name         = "1119-dev-a1-control-plane"
   vpc_cidr             = "10.0.0.0/16"
   nat_number           = "1"
   public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
@@ -34,7 +34,7 @@ locals {
     "id"             = "1119"
     "owner"          = "tcc"
     "teams"          = "Devops"
-    "environment"    = "production"
+    "environment"    = "dev"
     "project"        = "a1"
     "create_by"      = "Terraform"
     "cloud_provider" = "aws"

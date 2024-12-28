@@ -67,6 +67,7 @@ tags = merge(var.tags, {
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
     },
   )
+```  
 
 ```s
 tags = merge(var.tags, {

@@ -12,28 +12,28 @@ terraform {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket         = "main-backend-tcc-1119"
-    dynamodb_table = "dynamodb-tcc-1119"
-    key            = "terraform1/tcc-eks-node-group/terraform.tfstate"
-    region         = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket         = "main-backend-tcc-1119"
+#     dynamodb_table = "dynamodb-tcc-1119"
+#     key            = "terraform1/tcc-eks-node-group/terraform.tfstate"
+#     region         = "us-east-1"
+#   }
+# }
 
 locals {
   aws_region         = "us-east-1"
-  control_plane_name = "1119-dev-a1"
+  control_plane_name = "1119-dev-a1-control-plane"
 
   eks_version  = "1.28"
   node_min     = "1"
   desired_node = "1"
-  node_max     = "3"
+  node_max     = "2"
 
   blue_node_color  = "blue"
   green_node_color = "green"
 
-  blue  = true
+  blue  = false
   green = true
 
   ec2_ssh_key               = "terraform"

@@ -37,20 +37,12 @@ variable "cluster_service_ipv4_cidr" {
 variable "tags" {
   type = map(any)
   default = {
-    "id"             = "1119"
-    "owner"          = "tcc"
-    "teams"          = "Devops"
-    "environment"    = "development"
-    "project"        = "a1"
-    "create_by"      = "Terraform"
-    "cloud_provider" = "aws"
   }
 }
 
 variable "public_subnet_ids" {
   type    = list(string)
   default = [""]
-
 }
 
 variable "private_subnet_ids" {
@@ -72,32 +64,3 @@ variable "enable_cluster_autoscaler" {
 variable "control_plane_name" {
   type = string
 }
-
-# variable "config" {
-#   type = map(any)
-#   default = {
-#     "ami_type"       = "AL2_x86_64"
-#     "capacity_type"  = "ON_DEMAND"
-#     "disk_size"      = 20
-#     "instance_types" = ["t3.medium"]
-#   }
-# }
-
-# # Assuming you already have subnet IDs, you can define them as variables
-# variable "public_subnet_ids" {
-#   type = list(string)
-#   default = [
-#     "subnet-02e286c9bdfb33f0b",
-#     "subnet-011cf4a50c2518de6"
-#   ]
-#   description = "list of public subnet IDs"
-# }
-
-# variable "private_subnet_ids" {
-#   type = list(string)
-#   default = [
-#     "subnet-0ea4e8e55f5a0e015",
-#     "subnet-001b7fd7aab3aec52"
-#   ]
-#   description = "list of private subnet IDs"
-# }

@@ -1,10 +1,10 @@
 aws_region = "us-east-1"
 
-control_plane_name = "1119-dev-a1"
-eks_version        = "1.28"
-node_min           = "4"
-desired_node       = "4"
-node_max           = "6"
+control_plane_name = "1119-dev-a1-control-plane"
+eks_version        = "1.29"
+node_min           = "1"
+desired_node       = "2"
+node_max           = "3"
 
 blue_node_color  = "blue"
 green_node_color = "green"

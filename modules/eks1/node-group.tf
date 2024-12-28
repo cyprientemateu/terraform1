@@ -20,7 +20,7 @@ resource "aws_eks_node_group" "tcc_node_group_private" {
   }
 
   scaling_config {
-    desired_size = 3
+    desired_size = 2
     max_size     = 3
     min_size     = 1
   }

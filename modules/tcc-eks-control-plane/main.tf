@@ -1,4 +1,4 @@
-resource "aws_iam_role" "eks_cluster" {
+resource "aws_iam_role" "eks_cluster_role" {
   name               = format("%s-%s-%s-control-plane-role", var.tags["id"], var.tags["environment"], var.tags["project"])
   assume_role_policy = <<POLICY
 {
@@ -18,12 +18,12 @@ POLICY
 
 resource "aws_iam_role_policy_attachment" "amazon_eks_cluster_policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.eks_cluster.name
+  role       = aws_iam_role.eks_cluster_role.name
 }
 
-resource "aws_eks_cluster" "eks" {
-  name     = format("%s-%s-%s", var.tags["id"], var.tags["environment"], var.tags["project"])
-  role_arn = aws_iam_role.eks_cluster.arn
+resource "aws_eks_cluster" "eks_cluster" {
+  name     = format("%s-%s-%s-control-plane", var.tags["id"], var.tags["environment"], var.tags["project"])
+  role_arn = aws_iam_role.eks_cluster_role.arn
   version  = var.eks_version
 
   vpc_config {

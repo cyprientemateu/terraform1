@@ -12,14 +12,14 @@ terraform {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket         = "main-backend-tcc-1119"
-    dynamodb_table = "dynamodb-tcc-1119"
-    key            = "terraform1/tcc-eks-control-plane/terraform.tfstate"
-    region         = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket         = "main-backend-tcc-1119"
+#     dynamodb_table = "dynamodb-tcc-1119"
+#     key            = "terraform1/tcc-eks-control-plane/terraform.tfstate"
+#     region         = "us-east-1"
+#   }
+# }
 
 locals {
   aws_region              = "us-east-1"

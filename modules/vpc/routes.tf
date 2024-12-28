@@ -17,7 +17,7 @@ resource "aws_route_table" "private" {
   count  = length(var.availability_zones)
   route {
     cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = element(aws_nat_gateway.tcc_nat[*].id, count.index)
+    nat_gateway_id = element(aws_nat_gateway.tcc_nat[*].id, count.index + 1)
   }
 
   tags = merge(var.tags, {

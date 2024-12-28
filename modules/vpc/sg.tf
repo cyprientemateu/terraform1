@@ -21,6 +21,22 @@ resource "aws_security_group" "tcc_sg" {
     cidr_blocks = ["0.0.0.0/0"] // Allow HTTP access from anywhere
   }
 
+  // Inbound rules for Node communication with EKS Control Plane
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] // Allow inbound traffic on 443 from the EKS control plane (public access if EKS is public)
+  }
+
+  // Allow communication with other nodes on port 10250 (Kubelet)
+  ingress {
+    from_port   = 10250
+    to_port     = 10250
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   // Outbound rules
   egress {
     from_port   = 0
